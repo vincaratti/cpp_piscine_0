@@ -1,4 +1,4 @@
-NAME		=	ex00
+NAME		=	ex01
 CC		= 	g++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -I $(INCLUDE) #-ggdb3 -fsanitize=address
 SRCDIR		=	./
