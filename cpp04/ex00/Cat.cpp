@@ -6,7 +6,7 @@
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:29:14 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/24 15:15:07 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:39:21 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ Cat&	Cat::operator=( const Cat& other )
 {
 	type = other.type;
 	return ( *this );
+}
+
+void	Cat::makeSound( void ) const
+{
+	std::cout << "mow" << std::endl;
 }

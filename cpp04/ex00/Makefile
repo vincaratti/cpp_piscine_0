@@ -7,8 +7,10 @@ INCLUDE		=	./
 
 SRC		=	main.cpp	\
 			Animal.cpp	\
+			WrongAnimal.cpp	\
 			Dog.cpp		\
-			Cat.cpp
+			Cat.cpp		\
+			WrongCat.cpp
 	
 OBJ		=	${addprefix $(OBJDIR), $(SRC:%.cpp=%.o)}
 

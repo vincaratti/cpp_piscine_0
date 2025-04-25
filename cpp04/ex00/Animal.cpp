@@ -6,7 +6,7 @@
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:29:14 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/24 15:25:11 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:24:44 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,7 @@ Animal&	Animal::operator=( const Animal& other )
 
 void	Animal::makeSound( void ) const
 {
-	if ( type == "Void Soul" )
-		std::cout << "The Soul Of An Animal Wheeps" << std::endl;
-	else if ( type == "Dog" )
-		std::cout << "bork" << std::endl;
-	else if ( type == "Cat" )
-		std::cout << "mow" << std::endl;
+	std::cout << "The Soul Of An Animal Wheeps" << std::endl;
 }
 
 std::string	Animal::getType( void ) const

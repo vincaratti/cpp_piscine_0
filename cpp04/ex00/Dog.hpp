@@ -6,7 +6,7 @@
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:55:49 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/24 15:21:12 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:26:22 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
 		Dog( const Dog& other );
 		~Dog( void );
 	Dog&	operator=( const Dog& other );
+	void	makeSound( void ) const;
 };
 
 #endif

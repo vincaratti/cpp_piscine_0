@@ -13,9 +13,7 @@
 
 #include "Dog.hpp"
 #include "Cat.hpp"
-
-//using Dog::Dog as Dog
-//using Cat::Cat as Cat
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -28,6 +26,15 @@ int main()
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+
+	std::cout << std::endl << "Wrong:" << std::endl << std::endl;
+
+	const WrongAnimal* WrongMeta = new WrongAnimal();
+	const WrongAnimal* WrongKitty = new WrongCat();
+	
+	std::cout << WrongKitty->getType() << " " << std::endl;
+	WrongKitty->makeSound(); //will output the WrongAnimal sound!
+	WrongMeta->makeSound();
 
 	return 0;
 }
