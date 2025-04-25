@@ -6,7 +6,7 @@
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:29:14 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/24 12:57:20 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/25 11:40:21 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 ClapTrap::ClapTrap( void ):_name("John Doe"), _hit_p(10), _energy_p(10), _attack_d(0)
 {
-	std::cout <<	"ClapTrap Default Constructor Called" << std::endl;
+	std::cout <<	"Default Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name ):_name(name), _hit_p(10), _energy_p(10), _attack_d(0)
 {
-	std::cout <<	"ClapTrap Name Constructor Called" << std::endl;
+	std::cout <<	"Name Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& claptrap )
 {
 	*this = claptrap;
-	std::cout <<	"ClapTrap Copy Constructor Called" << std::endl;
+	std::cout <<	"Copy Constructor Called" << std::endl;
 }
 
 ClapTrap::~ClapTrap( void )
 {
-	std::cout <<	"ClapTrap Destructor Called" << std::endl;
+	std::cout <<	"Destructor Called" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& other )
@@ -42,7 +42,7 @@ ClapTrap&	ClapTrap::operator=( const ClapTrap& other )
 	return (*this);
 }
 
-void	ClapTrap::attack( const std::string& target )
+void	ClapTrap::attack( const std::string &target )
 {
 	if ( _energy_p <= 0  || _hit_p <= 0 )
 	{

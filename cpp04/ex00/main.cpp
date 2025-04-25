@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,29 +7,27 @@
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 19:01:46 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/23 14:33:08 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:54:03 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-int	main( void )
+//using Dog::Dog as Dog
+//using Cat::Cat as Cat
+
+int main()
 {
-	ClapTrap	tocopy1("joey");
-	ClapTrap	joey(tocopy1);
-	ScavTrap	tocopy2("joseph");
-	ScavTrap	joseph = tocopy2;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);
-	joey.beRepaired(2);
-	joseph.guardGate();
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);	
+	return 0;
 }

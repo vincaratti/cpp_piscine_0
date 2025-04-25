@@ -6,7 +6,7 @@
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:29:14 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/01/29 20:22:01 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/24 13:20:55 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,23 @@
 
 ClapTrap::ClapTrap( void ):_name("John Doe"), _hit_p(10), _energy_p(10), _attack_d(0)
 {
-	std::cout <<	"Default Constructor Called" << std::endl;
+	std::cout <<	"ClapTrap Default Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name ):_name(name), _hit_p(10), _energy_p(10), _attack_d(0)
 {
-	std::cout <<	"Name Constructor Called" << std::endl;
+	std::cout <<	"ClapTrap Name Constructor Called" << std::endl;
 }
 
-ClapTrap::ClapTrap( const ClapTrap& claptrap )//:_name(claptrap._name),
-//						_hit_p(claptrap._hit_p),
-//						_energy_p(claptrap._energy_p),
-//						_attack_d(claptrap._attack_d)
+ClapTrap::ClapTrap( const ClapTrap& claptrap )
 {
 	*this = claptrap;
-	std::cout <<	"Copy Constructor Called" << std::endl;
+	std::cout <<	"ClapTrap Copy Constructor Called" << std::endl;
 }
 
 ClapTrap::~ClapTrap( void )
 {
-	std::cout <<	"Destructor Called" << std::endl;
+	std::cout <<	"ClapTrap Destructor Called" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& other )
@@ -45,7 +42,7 @@ ClapTrap&	ClapTrap::operator=( const ClapTrap& other )
 	return (*this);
 }
 
-void	ClapTrap::attack( const std::string &target )
+void	ClapTrap::attack( const std::string& target )
 {
 	if ( _energy_p <= 0  || _hit_p <= 0 )
 	{

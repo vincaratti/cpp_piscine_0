@@ -1,30 +1,30 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 19:01:46 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/24 12:58:59 by vcaratti         ###   ########.fr       */
+/*   Created: 2025/03/19 11:55:49 by vcaratti          #+#    #+#             */
+/*   Updated: 2025/04/24 14:41:26 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
+#ifndef __CAT_HPP__
+#define __CAT_HPP__
 
-int	main( void )
+#include "Animal.hpp"
+
+class Cat: public Animal
 {
-	ClapTrap	tocopy1("joey");
-	ClapTrap	joey(tocopy1);
-	ClapTrap	tocopy2("joseph");
-	ClapTrap	joseph = tocopy2;
+public:
+		Cat( void );
+		Cat( std::string& type );
+		Cat( const Cat& other );
+		~Cat( void );
+	Cat&	operator=( const Cat& other );
+};
 
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);
-	joey.beRepaired(2);
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-}
+#endif

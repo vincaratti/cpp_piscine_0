@@ -6,7 +6,7 @@
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:13:08 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/23 14:24:29 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/22 11:53:57 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	virtual	~ClapTrap( void );
 	ClapTrap&	operator=( const ClapTrap& other );
 
-	virtual void	attack( const std::string& target );
+	void	attack( const std::string& target );
 	void	takeDamage( unsigned int amount);
 	void	beRepaired( unsigned int amount);
 

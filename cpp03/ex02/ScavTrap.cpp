@@ -6,7 +6,7 @@
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:51:12 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/24 13:31:54 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:37:34 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,4 @@ void	ScavTrap::guardGate( void )
 {
 	_guardGateMode = 1;
 	std::cout<< "ScavTrap now in Gate-keeper mode.\n";		
-}
-
-void	ScavTrap::attack( const std::string& target )
-{
-	if ( _energy_p <= 0  || _hit_p <= 0 )
-	{
-		std::cout <<	"ScavTrap " << _name << " tried to attack " << target <<
-				" . Unfortunatly he cannot" <<
-				std::endl;
-		return ;
-	}
-	std::cout <<	"ScavTrap " << _name << " attacks " << target <<
-			", causing " << _attack_d << " points of damage!" <<
-			std::endl;
-	_energy_p--;
 }

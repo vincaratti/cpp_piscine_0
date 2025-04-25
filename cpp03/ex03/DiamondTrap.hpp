@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 19:01:46 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/23 14:33:08 by vcaratti         ###   ########.fr       */
+/*   Created: 2025/03/19 11:55:49 by vcaratti          #+#    #+#             */
+/*   Updated: 2025/04/24 11:19:23 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#ifndef __DIAMONDTRAP_H__
+#define __DIAMONDTRAP_H__
+
+#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-int	main( void )
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	ClapTrap	tocopy1("joey");
-	ClapTrap	joey(tocopy1);
-	ScavTrap	tocopy2("joseph");
-	ScavTrap	joseph = tocopy2;
-
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);
-	joey.beRepaired(2);
-	joseph.guardGate();
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);	
-}
+public:
+		DiamondTrap( void );
+		DiamondTrap( std::string name );
+		DiamondTrap( const DiamondTrap& other );
+		~DiamondTrap( void );
+	DiamondTrap&	operator=( const DiamondTrap& other );
+	void	attack( const std::string& target );
+	void	whoAmI( void );
+private:
+	std::string	_name;
+};
+#endif

@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 19:01:46 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/24 12:58:59 by vcaratti         ###   ########.fr       */
+/*   Created: 2025/03/05 11:11:38 by vcaratti          #+#    #+#             */
+/*   Updated: 2025/04/24 11:19:17 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int	main( void )
-{
-	ClapTrap	tocopy1("joey");
-	ClapTrap	joey(tocopy1);
-	ClapTrap	tocopy2("joseph");
-	ClapTrap	joseph = tocopy2;
+#pragma once
 
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);
-	joey.beRepaired(2);
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-}
+#ifndef __FRAGTRAP_HPP__
+#define __FRAGTRAP_HPP__
+
+class FragTrap : virtual public ClapTrap
+{
+public:
+		FragTrap( void );
+		FragTrap( std::string name );
+		FragTrap( const FragTrap& other );
+	virtual	~FragTrap( void );
+	FragTrap&	operator=( const FragTrap& other );
+	void	highFivesGuys( void );
+};
+
+#endif

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 19:01:46 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/24 12:58:59 by vcaratti         ###   ########.fr       */
+/*   Created: 2025/01/29 20:35:36 by vcaratti          #+#    #+#             */
+/*   Updated: 2025/04/23 14:35:58 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#ifndef __SCAVTRAP_H__
+#define __SCAVTRAP_H__
+
 #include "ClapTrap.hpp"
 
-int	main( void )
+class ScavTrap : public ClapTrap
 {
-	ClapTrap	tocopy1("joey");
-	ClapTrap	joey(tocopy1);
-	ClapTrap	tocopy2("joseph");
-	ClapTrap	joseph = tocopy2;
+public:
+		ScavTrap( void );
+		ScavTrap( std::string name );
+		ScavTrap( const ScavTrap& other );
+		~ScavTrap( void );
+	ScavTrap&	operator=( const ScavTrap& other);
+	void	guardGate( void );
+private:
+	bool	_guardGateMode;
+};
 
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);
-	joey.beRepaired(2);
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-}
+#endif

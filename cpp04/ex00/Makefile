@@ -1,4 +1,4 @@
-NAME		=	ex01
+NAME		=	ex00
 CC		= 	g++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -I $(INCLUDE) #-ggdb3 -fsanitize=address
 SRCDIR		=	./
@@ -6,8 +6,9 @@ OBJDIR		=	./obj/
 INCLUDE		=	./
 
 SRC		=	main.cpp	\
-			ScavTrap.cpp	\
-			ClapTrap.cpp
+			Animal.cpp	\
+			Dog.cpp		\
+			Cat.cpp
 	
 OBJ		=	${addprefix $(OBJDIR), $(SRC:%.cpp=%.o)}
 

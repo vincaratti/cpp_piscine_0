@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 19:01:46 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/24 12:58:59 by vcaratti         ###   ########.fr       */
+/*   Created: 2025/01/29 18:29:14 by vcaratti          #+#    #+#             */
+/*   Updated: 2025/04/24 15:13:29 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Dog.hpp"
 
-int	main( void )
+Dog::Dog( void ): Animal( "Dog" )
 {
-	ClapTrap	tocopy1("joey");
-	ClapTrap	joey(tocopy1);
-	ClapTrap	tocopy2("joseph");
-	ClapTrap	joseph = tocopy2;
+	std::cout << "Dog Default Constructor Called" << std::endl;
+}
 
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
-	joey.takeDamage(5);
-	joey.beRepaired(2);
-	joey.attack("joseph");
-	joseph.takeDamage(5);
-	joseph.attack("joey");
+Dog::Dog( const Dog& other ): Animal( other.type )
+{
+	*this = other;
+	std::cout << "Dog Copy Constructor Called" << std::endl;
+}
+
+Dog::~Dog( void )
+{
+	std::cout << "Dog Destructor Called" << std::endl;
+}
+
+Dog&	Dog::operator=( const Dog& other )
+{
+	type = other.type;
+	return ( *this );
 }
