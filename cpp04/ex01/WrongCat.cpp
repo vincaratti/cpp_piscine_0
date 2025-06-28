@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:29:14 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/28 12:34:07 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:39:30 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat( void ): Animal( "Cat" )
+WrongCat::WrongCat( void ): WrongAnimal( "WrongCat" )
 {
-	std::cout << "Cat Default Constructor Called" << std::endl;
+	std::cout << "WrongCat Default Constructor Called" << std::endl;
 }
 
-Cat::Cat( const Cat& other ): Animal( other.type )
+WrongCat::WrongCat( const WrongCat& other ): WrongAnimal( other.type )
 {
 	*this = other;
-	std::cout << "Cat Copy Constructor Called" << std::endl;
+	std::cout << "WrongCat Copy Constructor Called" << std::endl;
 }
 
-Cat::~Cat( void )
+WrongCat::~WrongCat( void )
 {
-	std::cout << "Cat Destructor Called" << std::endl;
+	std::cout << "WrongCat Destructor Called" << std::endl;
 }
 
-Cat&	Cat::operator=( const Cat& other )
+WrongCat&	WrongCat::operator=( const WrongCat& other )
 {
 	type = other.type;
 	return ( *this );
 }
 
-void	Cat::makeSound( void ) const
+void	WrongCat::makeSound( void ) const
 {
-	std::cout << "mow" << std::endl;
+	std::cout << "wrong mow" << std::endl;
 }

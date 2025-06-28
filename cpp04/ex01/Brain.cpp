@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 18:29:14 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/28 12:34:07 by vcaratti         ###   ########.fr       */
+/*   Created: 2025/03/19 11:55:49 by vcaratti          #+#    #+#             */
+/*   Updated: 2025/04/28 12:52:25 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat( void ): Animal( "Cat" )
+Brain::Brain( void )
 {
-	std::cout << "Cat Default Constructor Called" << std::endl;
+	std::cout << "Brain Default Constructor Called" << std::endl;
 }
 
-Cat::Cat( const Cat& other ): Animal( other.type )
+Brain::Brain( const Brain& other )
 {
 	*this = other;
-	std::cout << "Cat Copy Constructor Called" << std::endl;
+	std::cout << "Brain Copy Constructor Called" << std::endl;
 }
 
-Cat::~Cat( void )
+Brain::~Brain( void )
 {
-	std::cout << "Cat Destructor Called" << std::endl;
+	std::cout << "Brain Destructor Called" << std::endl;
 }
 
-Cat&	Cat::operator=( const Cat& other )
+Brain&	Brain::operator=( const Brain& other )
 {
-	type = other.type;
+	//ideas = other.ideas;
+	for (int i = 0; i < 100; i ++ )
+		ideas[i] = (other.ideas)[i];
 	return ( *this );
-}
-
-void	Cat::makeSound( void ) const
-{
-	std::cout << "mow" << std::endl;
 }

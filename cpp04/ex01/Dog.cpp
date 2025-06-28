@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcaratti <vcaratti@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:29:14 by vcaratti          #+#    #+#             */
-/*   Updated: 2025/04/28 12:34:07 by vcaratti         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:23:30 by vcaratti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat( void ): Animal( "Cat" )
+Dog::Dog( void ): Animal( "Dog" ), brain( NULL )
 {
-	std::cout << "Cat Default Constructor Called" << std::endl;
+	std::cout << "Dog Default Constructor Called" << std::endl;
+	brain = new Brain();
 }
 
-Cat::Cat( const Cat& other ): Animal( other.type )
+Dog::Dog( const Dog& other ): Animal( other.type ), brain( NULL )
 {
 	*this = other;
-	std::cout << "Cat Copy Constructor Called" << std::endl;
+	std::cout << "Dog Copy Constructor Called" << std::endl;
 }
 
-Cat::~Cat( void )
+Dog::~Dog( void )
 {
-	std::cout << "Cat Destructor Called" << std::endl;
+	delete brain;
+	std::cout << "Dog Destructor Called" << std::endl;
 }
 
-Cat&	Cat::operator=( const Cat& other )
+Dog&	Dog::operator=( const Dog& other )
 {
 	type = other.type;
+	delete brain;
+	brain = new Brain( *(other.brain) );
 	return ( *this );
 }
 
-void	Cat::makeSound( void ) const
+void	Dog::makeSound( void ) const
 {
-	std::cout << "mow" << std::endl;
+	std::cout << "bork" << std::endl;
 }
